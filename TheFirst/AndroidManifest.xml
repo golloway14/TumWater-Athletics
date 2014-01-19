@@ -3,10 +3,20 @@
     package="com.example.thefirst"
     android:versionCode="1"
     android:versionName="1.0" >
-
+<uses-permission android:name="android.permission.INTERNET"/>
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+<uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
+<!-- The following two permissions are not required to use
+     Google Maps Android API v2, but are recommended. -->
+<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-sdk
         android:minSdkVersion="8"
         android:targetSdkVersion="16" />
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true"/>
 
     <application
         android:allowBackup="true"
@@ -18,18 +28,36 @@
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.thefirst.DisplayMessageActivity"
+            android:name="com.example.thefirst.Event"
             android:label="@string/title_activity_display_message"
             android:parentActivityName="com.example.doingit.MESSAGE" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.doingit.MESSAGE" />
         </activity>
+        <activity
+            android:name="com.example.thefirst.MapPane"
+            android:label="@string/title_activity_display_message"
+            android:parentActivityName="com.example.doingit.MESSAGE" >
+             <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.doingit.MESSAGE" />
+            </activity>
+        <activity
+            android:name="com.example.thefirst.loadingEventsScreen"
+            android:label="@string/title_activity_display_message"
+            android:parentActivityName="com.example.doingit.MESSAGE" >
+             <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.doingit.MESSAGE" />
+            </activity>
     </application>
+    <meta-data
+    android:name="com.google.android.maps.v2.API_KEY"
+    android:value="AIzaSyC0pm2UlX-jV6E4CLy-a4BgWEPLI40-qwU"/>
 
 </manifest>
