@@ -21,13 +21,19 @@ import android.view.Menu;
 import android.view.MotionEvent;
 import android.view.View;
 
-
+/**
+ * This is essentially the controller for the two home screens
+ * it extends fragmentActivity which gives us the functionality of flipping 
+ * between two XML files. The buttons that are used in both of the XML
+ * files have their functionality written here
+ * @author Samuel
+ *
+ */
 public class MainActivity extends FragmentActivity{
 	public final static String EXTRA_MESSAGE="com.example.doingit.MESSAGE";
 	public static boolean hoop = false;
 	
 	
-	private GestureDetectorCompat mDetector;
 	private PagerAdapter mPagerAdapter;
 	
     @Override
@@ -35,9 +41,13 @@ public class MainActivity extends FragmentActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.swipelayout);
         List<Fragment> fragments = new Vector<Fragment>();
+        // we need to add the two fragments so we can flip through them
         fragments.add(Fragment.instantiate(this, homeScreen1.class.getName()));
         fragments.add(Fragment.instantiate(this, homeScreen2.class.getName()));
+        //create the page adapter
         this.mPagerAdapter = new PagerAdapter(super.getSupportFragmentManager(), fragments);
+        // have the content view be a Viewpager so it can use multiple XML
+        //files
         ViewPager pager = (ViewPager)super.findViewById(R.id.viewpager);
         pager.setAdapter(this.mPagerAdapter);
         
@@ -64,11 +74,7 @@ public class MainActivity extends FragmentActivity{
     	Intent intent = new Intent(this, loadingEventsScreen.class);
  	    startActivity(intent);
     }
-    public void map(View view)
-    {
-    	Intent intent = new Intent(this,MapPane.class);
-    	startActivity(intent);
-    }
+   
     
     
     

@@ -10,12 +10,15 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-
+/**
+ * This is the loading screen while we get the Today's events from
+ * the interwebs
+ * @author Samuel
+ *
+ */
 public class loadingEventsScreen extends Activity 
 {
 	
-	
-
 	public final static String EXTRA_MESSAGE="com.example.doingit.MESSAGE";
 	public void onCreate(Bundle savedInstanceState)
 	{
@@ -23,7 +26,11 @@ public class loadingEventsScreen extends Activity
 	    setContentView(R.layout.loadingscreen);
 	    new GetTask(this).execute();
 	}
-	
+	/**
+	 * setting up the AsyncTask so we can fake doing two things at once
+	 * @author Samuel
+	 *
+	 */
 	class GetTask extends AsyncTask<Object, Void, String> {
 	    Context context;
 
@@ -37,7 +44,11 @@ public class loadingEventsScreen extends Activity
 
 	       
 	    }
-
+	    
+	    /**
+	     * while the loading screen is in the forfront 
+	     * we want to use Jsoup to go get our HTML info
+	     */
 	    @Override
 	    protected String doInBackground(Object... params) {
 	        // here you can get the details from db or web and fetch it..

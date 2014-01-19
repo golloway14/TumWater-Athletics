@@ -8,7 +8,12 @@ import android.support.v4.app.NavUtils;
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.os.Build;
-
+/**
+ * this class isn't currently in use
+ * i was using it for testing random stuff and my need it later
+ * @author Samuel
+ *
+ */
 public class DisplayMessageActivity extends Activity {
 	@SuppressLint("NewApi")
 	@Override

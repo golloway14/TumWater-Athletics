@@ -18,7 +18,12 @@ import android.content.Intent;
 import android.gesture.GestureOverlayView;
 import android.gesture.GestureOverlayView.OnGestureListener;
 import android.os.Build;
-
+/**
+ * this is our class that sets up and displays the events gathered from
+ * the internets
+ * @author Samuel
+ *
+ */
 public class Event extends Activity implements OnGestureListener {
 	
 	@SuppressLint("NewApi")
