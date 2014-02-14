@@ -70,6 +70,25 @@ public class MainActivity extends FragmentActivity{
     	startActivity(intent);
     }
     
+    public void schedule(View View)
+    {
+    	Intent intent = new Intent(this, LoadingSchedule.class);
+ 	    startActivity(intent);
+    }
+    public void highlights(View view)
+    {
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse("http://www.youtube.com/channel/HCjN9X-wfJfd4"));
+        startActivity(intent);
+    }
+    
+    public void gallery(View view)
+    {
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            intent.setData(Uri.parse("http://www.flickr.com/search/?q=tumwater%20sports"));
+            startActivity(intent);
+    }
+    
     
     
 }

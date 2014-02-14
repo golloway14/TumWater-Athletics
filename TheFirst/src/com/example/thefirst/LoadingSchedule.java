@@ -12,7 +12,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 
 
-public class loadingEventsScreen extends Activity 
+public class LoadingSchedule extends Activity 
 {
 	
 	
@@ -43,7 +43,7 @@ public class loadingEventsScreen extends Activity
 	    protected String doInBackground(Object... params) {
 	        // here you can get the details from db or web and fetch it..
 	    		Soup soup = new Soup(this.context);
-	    		String info = soup.travel();
+	    		String info = soup.travelSchedule();
 	    		//String hey1 = info.toString();
 	    		//String hey1 = "hey"
 	    		Intent intent = new Intent(this.context, Event.class);
